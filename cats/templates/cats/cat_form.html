@@ -1,0 +1,19 @@
+{% extends "base_bootstrap.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+{#        <table>#}
+{#            {{ form.as_table }}#}
+{#        </table>#}
+        <input type="submit" value="Submit">
+        <input type="submit" onclick="window.location='{% url 'cats:all' %}' ; return false;" value="Cancel">
+    </form>
+
+
+
+{% endblock %}
